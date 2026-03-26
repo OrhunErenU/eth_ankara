@@ -1,0 +1,22 @@
+/* ETH Ankara - Clean Styles */
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 1px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+}
+
+/* Image loading */
+img {
+  background-color: #0a0a0a;
+}
