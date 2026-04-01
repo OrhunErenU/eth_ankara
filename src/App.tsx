@@ -160,10 +160,19 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 tracking-wider"
+          className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-2 tracking-wider"
         >
           ETH ANKARA
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-sm text-white/40 tracking-widest uppercase mb-6"
+        >
+          Produced by TEDÜ Blockchain
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -209,7 +218,7 @@ function HeroSection() {
         >
           {[
             { value: '500+', label: 'Hackers' },
-            { value: '$25K', label: 'Prizes' },
+            { value: 'TBA', label: 'Prizes' },
             { value: '20+', label: 'Speakers' },
             { value: '48h', label: 'Of Building' },
           ].map((stat, i) => (
@@ -294,8 +303,8 @@ function HackathonSection() {
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-3xl font-bold text-white mb-1">$25,000</div>
-                <div className="text-white/50">Prize Pool</div>
+                <div className="text-2xl font-bold text-white mb-1">Yakında Duyurulacak</div>
+                <div className="text-white/50">Ödül Havuzu</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-white mb-1">48h</div>
@@ -516,7 +525,7 @@ function SponsorsSection() {
           <DialogHeader>
             <DialogTitle className="text-white">Sponsorship</DialogTitle>
             <DialogDescription className="text-white/50">
-              Contact us at hello@ethankara.xyz
+              Bize ulaşın: blockchain@tedu.edu.tr
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -529,7 +538,6 @@ function SponsorsSection() {
 function TicketsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section id="tickets" ref={ref} className="relative py-24 lg:py-32 overflow-hidden bg-[#4a5568]">
@@ -553,29 +561,14 @@ function TicketsSection() {
             Early bird tickets available soon. Student discounts available.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => setDialogOpen(true)} 
-              className="px-8 py-3.5 bg-white text-[#4a5568] font-medium rounded-md hover:bg-white/90 transition-colors">
-              Early Bird Ticket
-            </button>
-            <button onClick={() => setDialogOpen(true)} 
-              className="px-8 py-3.5 border border-white/30 text-white font-medium rounded-md hover:bg-white/10 transition-colors">
-              Student Ticket
-            </button>
+          <div className="flex flex-col items-center gap-4 justify-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white/70 font-medium rounded-md">
+              <Clock size={18} />
+              Bilet satışları yakında duyurulacak
+            </div>
           </div>
         </motion.div>
       </div>
-
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-[#4a5568] border-0">
-          <DialogHeader>
-            <DialogTitle className="text-white">Tickets Coming Soon</DialogTitle>
-            <DialogDescription className="text-white/50">
-              Follow us on Twitter and Telegram for updates.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
@@ -639,10 +632,10 @@ function Footer() {
               Connect
             </h3>
             <div className="space-y-3">
-              <a href="mailto:hello@ethankara.xyz" className="block text-white/50 hover:text-cyan-400 transition-colors">
-                hello@ethankara.xyz
+              <a href="mailto:blockchain@tedu.edu.tr" className="block text-white/50 hover:text-cyan-400 transition-colors">
+                blockchain@tedu.edu.tr
               </a>
-              <a href="https://twitter.com/ethankara" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
+              <a href="https://x.com/ethankaraxyz" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
                 Twitter / X
               </a>
               <a href="https://t.me/ethankara" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
